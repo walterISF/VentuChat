@@ -1,0 +1,28 @@
+<div class="chat-window">
+  <div class="topo">
+    <div class="up">
+      <div class="som"></div>
+      <div class="camera">
+        <div class="eye"></div>
+      </div>
+    </div>
+    <div class="down">
+        <img src="../../assets/logo.png" alt="imgLogo">
+    </div>
+  </div>
+  <div class="message-list border-styleBet">
+      <ul id="message-list">
+        <li *ngFor="let mensagem of listaMensagem">
+          {{ mensagem.text }}
+          <div class="time">
+            {{ mensagem.data | date: "hh:mm a" }}
+          </div>
+        </li>
+      </ul>
+  </div>
+  <div class="message-panel">
+      <textarea id="message" rows="3" class="border-styleBet" (keyup)="keyup($event)" maxlength="500" [(ngModel)]="mensagem"></textarea>
+      <button id="btn-send" class="border-styleBet" (click)="addMessage()"> Enviar </button>
+      <div id="counter">{{ mensagem.length }}/500</div>
+  </div>
+</div>
