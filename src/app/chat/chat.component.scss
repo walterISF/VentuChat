@@ -1,13 +1,13 @@
-$tamanho:250px;
+$tamanho:300px;
 .chat-window
 {
-    width: 250px;
+    width: $tamanho;
     margin: auto;
     text-align: center;
     background-color: #fff;
     padding: 15px;
     border-radius: 20px;
-    height: 500px;
+    height: 520px;
 }
 .chat-window img
 {
@@ -22,6 +22,7 @@ $tamanho:250px;
     margin: auto;
     overflow-y: auto;
     text-align: left;
+    border-radius: 5px 5px 0px 0px;
 }
 .message-list ul 
 {
@@ -53,7 +54,7 @@ $tamanho:250px;
 }
 .message-panel textarea
 {
-    width: 244px;
+    width: 98%;
     resize: none;
     border-color: #c1c1c1;
     vertical-align: bottom;

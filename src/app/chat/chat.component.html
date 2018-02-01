@@ -10,19 +10,14 @@
         <img src="../../assets/logo.png" alt="imgLogo">
     </div>
   </div>
-  <div class="message-list border-styleBet">
+  <div class="message-list" #scrollElement>
       <ul id="message-list">
-        <li *ngFor="let mensagem of listaMensagem">
-          {{ mensagem.text }}
-          <div class="time">
-            {{ mensagem.data | date: "hh:mm a" }}
-          </div>
-        </li>
+        <app-chat-item *ngFor="let item of messageList" [text]="item.message" [time]="item.time" [author]="item.author"></app-chat-item>
       </ul>
   </div>
   <div class="message-panel">
-      <textarea id="message" rows="3" class="border-styleBet" (keyup)="keyup($event)" maxlength="500" [(ngModel)]="mensagem"></textarea>
-      <button id="btn-send" class="border-styleBet" (click)="addMessage()"> Enviar </button>
-      <div id="counter">{{ mensagem.length }}/500</div>
+      <textarea #myText id="message" rows="3" class="border-styleBet" (keyup)="getKeyPress($event)" maxlength="500" [(ngModel)]="message"></textarea>
+      <button id="btn-send" class="border-styleBet" (click)="sendMessage()"> Enviar </button>
+      <div id="counter">{{ message.length }}/500</div>
   </div>
 </div>
